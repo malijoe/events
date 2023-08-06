@@ -21,11 +21,10 @@ func NewAggregateRoot(id string, typ string, when when) (root *AggregateRoot) {
 		return
 	}
 	root = &AggregateRoot{
-		id:      id,
-		version: aggregateStartVersion,
-		typ:     typ,
-		when:    when,
-		events:  make([]Event, 0, aggregateEventsInitialCap),
+		id:     id,
+		typ:    typ,
+		when:   when,
+		events: make([]Event, 0, aggregateEventsInitialCap),
 	}
 	return
 }
