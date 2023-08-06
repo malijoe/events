@@ -18,11 +18,11 @@ type Event struct {
 	metadata      []byte
 }
 
-func NewEvent(root *AggregateRoot, typ string) Event {
+func NewEvent(root Aggregate, typ string) Event {
 	return Event{
 		id:            uuid.NewV4().String(),
-		aggregateType: root.typ,
-		aggregateID:   root.id,
+		aggregateType: root.Type(),
+		aggregateID:   root.ID(),
 		typ:           typ,
 		timestamp:     time.Now().UTC(),
 	}
