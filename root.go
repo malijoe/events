@@ -16,6 +16,9 @@ type AggregateRoot struct {
 	when          when
 }
 
+// interface assertion
+var _ Aggregate = (*AggregateRoot)(nil)
+
 func NewAggregateRoot(id string, typ string, when when) (root *AggregateRoot) {
 	if when == nil {
 		return
