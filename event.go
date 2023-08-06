@@ -40,6 +40,10 @@ func (e Event) Data() []byte {
 	return e.data
 }
 
+func (e Event) Timestamp() time.Time {
+	return e.timestamp
+}
+
 func (e Event) Metadata() []byte {
 	return e.metadata
 }
